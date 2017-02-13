@@ -1,0 +1,139 @@
+*{
+	margin: 0;padding: 0;
+	text-decoration: none;	
+}
+img{
+	max-width: 100%;
+}
+a{
+	font-family: Arial;
+}
+p{
+	font-family: Arial;
+	font-size: 75%;
+	color: #666;
+	line-height: 2em;
+}
+ul li{
+	list-style-type: none;
+}
+body{
+	background: #0D1424;
+}
+header{
+	width: 980px;
+	margin: 0 auto;
+	color: white;
+}
+h1{
+	margin-top: 1em;
+}
+em{
+	display: inline-block;
+	margin-top: 0.5em;
+}
+nav{
+	width: 980px;
+	margin: 0 auto;
+	margin-top: 1.5em;
+	padding: 5px 0 5px 0;
+	border-radius: 8px;
+	font-size: 80%;
+	background: -webkit-linear-gradient(left,#6b6b6b,#b9b9b9);
+}
+nav ul{
+	margin-left: 2em;
+}
+nav li{
+	/*display: inline-block;*/
+	float: left;
+	margin-top: 0.5em;
+}
+nav a{
+	color: white;
+	padding: 12px 1em 10px 1em;
+	/*border: 1px solid red;*/
+}
+nav a:hover{
+	padding: 12px 1em 10px 1em;
+	border-radius: 20px;
+	background: -webkit-linear-gradient(left,#4c4c4c,#2b2b2b);
+}
+input{
+	width: 10em;
+	outline: none;
+	border-radius: 8px;
+	padding: 4px 0;
+	margin-right: 5px;
+	float: right;
+}
+main{
+	width: 980px;
+	height: auto;
+	margin: 0 auto;
+	display: flex;
+}
+.mainleft{
+	margin-top: 1.5em;
+	padding: 1.5em 0 1em 1em;
+	background: white;
+	border-radius: 8px;
+	flex: 7;
+}
+.mainleft a{
+	color: #516AD4;
+}
+.mainleft a:hover{
+	text-decoration: underline;
+}
+video{
+	width: 90%;
+	margin: 1em 0 0 1.5em;
+}
+.mainright{
+	margin: 1.5em 0 0 1em;
+	flex: 3;
+}
+.mainright ul{
+	padding: 1em 1.5em 1em 1.5em;
+	background: white;
+	border-radius: 8px;
+}
+.mainright li{
+	font-size: 90%;
+	padding: 0.8em 0;
+	border-top: 1px solid #ddd;
+}
+.mainright li:nth-child(1){
+	color: black;
+	font-size: 120%;
+	font-weight: bold;
+	border: none;
+}
+.mainright li a{
+	color: #516AD4;
+}
+.mainright li a:hover{
+	text-decoration: underline;
+}
+.mainright p{
+	margin-top: 1em;
+	border-radius: 8px;
+	color: black;
+	font-weight: bold;
+	font-size: 110%;
+	padding: 1em 0 1em 1em;
+	background: white;
+}
+footer{
+	width: 980px;
+	margin: 0 auto;
+	padding: 1em 0;
+}
+footer a{
+	font-size: 80%;
+	color: white;
+}
+footer a:hover{
+	text-decoration: underline;
+}
