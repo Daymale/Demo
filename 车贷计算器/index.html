@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>车贷计算器</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/index.js"></script>	
+</head>
+<body>
+	<div id="include">
+		<div class="bian">
+			<ul>
+				<li id="go" onclick="myClick1()">购车贷款计算</li>
+				<li id="fe" onclick="myClick2()">购车税费</li>	
+			</ul>
+	<!-- ============================================================================================================= -->
+			<div id="body1">
+				<div id="xian">
+					<table class="table" cellspacing="12px">
+	<!-- ============================================================================================================= -->
+						<tr>
+							<td>裸车价格:</td>
+							<td><input type="text" class="text1" placeholder="金额" id="luoChe"></td>
+							<td class="myfont">万元</td><td></td>
+						</tr>
+	<!-- ============================================================================================================= -->
+						<tr>
+							<td>首付比例:</td>
+							<td>
+								<select name="" id="payment">
+										<option value="0.8">二成</option>
+										<option value="0.7">三成</option>
+										<option value="0.6">四成</option>
+										<option value="0.5">五成</option>
+										<option value="0.4">六成</option>
+										<option value="0.3">七成</option>
+										<option value="0.2">八成</option>
+										<option value="0.1">九成</option>
+								</select>
+							</td><td></td><td></td>
+						</tr>
+	<!-- ============================================================================================================= -->
+						<tr>
+							<td>贷款期限:</td>
+							<td>
+								<select name="" id="deadline">
+									<option value="6">6个月(6期)</option>
+									<option value="12">1年(12期)</option>
+									<option value="24">2年(24期)</option>
+									<option value="36">3年(36期)</option>
+									<option value="48">4年(48期)</option>
+									<option value="60">5年(60期)</option>
+								</select>
+							</td><td></td><td></td>
+						</tr>						
+	<!-- ============================================================================================================= -->
+						<tr>
+							<td>贷款年利率:</td>
+							<td>
+								<select name="" id="rate" onchange="linkage()">
+									<option value="0.056">5.6%(6个月及以内)</option>
+									<option value="0.06">6.0%(1年及以内)</option>
+									<option value="0.0615">6.15(3年及以内)</option>
+									<option value="0.064">6.40%(5年及以内)</option>
+								</select>
+							</td>
+	<!-- ============================================================================================================= -->
+							<td>
+								<select name="" id="discount" onchange="linkage()">
+									<option value="1">无折扣</option>
+									<option value="0.95">9.5折</option>
+									<option value="0.9">9.0折</option>
+									<option value="0.85">8.5折</option>
+									<option value="0.8">8.0折</option>
+									<option value="0.75">7.5折</option>
+									<option value="0.7">7.0折</option>
+									<option value="0.65">6.5折</option>
+									<option value="0.6">6.0折</option>
+								</select>
+							</td>
+							<td>= <input type="text" class="text2" placeholder="5.6" id="discount2"  readonly="redonly">‰</td>		
+						</tr>
+					</table>
+	<!-- ============================================================================================================= -->
+					<div class="calculate">
+						<input type="button" value="计算结果" id="but" onclick="compute1()">
+						<a href="" class="empty"><img src="images\\1.png" alt="">清空</a>	
+					</div>
+				</div>
+	<!-- ======================================隐藏裸车价格部分======================================================== -->
+				<div id="chang">
+					<table class="table" cellspacing="12px">
+						<tr>
+							<td>裸车价格:</td>
+							<td><input type="text" class="text1" placeholder="金额" id="luoChe2"></td>
+							<td class="myfont">万元</td><td></td>
+						</tr>
+	<!-- ============================================================================================================= -->
+						<tr>
+							<td>车辆排量:</td>
+							<td>
+								<select id="paiLiang">
+										<option value="700">1.0L及以下</option>
+										<option value="950" selected="selected">1.0L-1.6L（含）</option>
+										<option value="1100">1.7L-2.0L（含）</option>
+										<option value="1300">2.1L-2.5L（含）</option>
+										<option value="1500">2.6L-3.0L（含）</option>
+										<option value="1700">3.1L-4.0L（含）</option>
+										<option value="2000">4.0以上</option>
+								</select>
+							</td><td></td><td></td>
+						</tr>
+	<!-- ============================================================================================================= -->
+						<tr>
+							<td>计划上牌地:</td>
+							<td>
+								<select name="">
+									<option value="anhui">A- 安徽</option>
+										<option value="beijing" selected="selected" >B- 北京</option>
+										<option value="chongqing">C- 重庆</option>
+										<option value="dalian">D- 大连</option>
+										<option value="fujian">F- 福建</option>
+										<option value="guangdong">G- 广东</option>
+										<option value="gansu">G- 甘肃</option>
+										<option value="guangxi">G- 广西</option>
+										<option value="guizhou">G- 贵州</option>
+										<option value="hebei">H- 河北</option>
+										<option value="hubei">H- 湖北</option>
+										<option value="heilongjiang">H- 黑龙江</option>
+										<option value="henan">H- 河南</option>
+										<option value="hainan">H- 海南</option>
+										<option value="hunan">H- 湖南</option>
+										<option value="jilin">J- 吉林</option>
+										<option value="jiangsu">J- 江苏</option>
+										<option value="jiangxi">J- 江西</option>
+										<option value="ningbo">L- 宁波</option>
+										<option value="liaoling">L- 辽宁</option>
+										<option value="neimenggu">N- 内蒙古</option>
+										<option value="ningxia">N- 宁夏</option>
+										<option value="qingdao">Q- 青岛</option>
+										<option value="qinghai">Q- 青海</option>
+										<option value="tianjin">T- 天津</option>
+										<option value="sichuan">S- 四川</option>
+										<option value="shandong">S- 山东</option>
+										<option value="shanghai">S- 上海</option>
+										<option value="sx">S- 陕西</option>
+										<option value="shanxi">S- 山西</option>
+										<option value="shenzhen">S- 深圳</option>
+										<option value="xiamen">X- 厦门</option>
+										<option value="xinjiang">X- 新疆</option>
+										<option value="yunnan">Y- 云南</option>
+										<option value="zhejiang">Z- 浙江</option>
+								</select>
+							</td><td class="myfont">（首字母）</td><td></td>
+						</tr>
+	<!-- ============================================================================================================= -->
+						<tr>
+							<td>车辆情况:</td>
+							<td>
+								<input type="radio" id="ck1" checked="checked" name="ck">
+								<label for="ck1" >6座以下</label>
+								<input type="radio" id="ck2" name="ck">
+								<label for = "ck2" >6座以上</label>
+							</td><td></td><td></td>		
+						</tr>
+					</table>
+	<!-- ============================================================================================================= -->
+					<div class="calculate">
+						<input type="button" value="计算结果" id="but" onclick="compute2()">
+						<a href="" class="empty"><img src="images\\1.png" alt="">清空</a>	
+					</div>
+				</div>
+	<!-- ================================购车贷款计算部分============================================================== -->
+				<div id="foot1">
+					<div class="img"></div>
+					<h1>计算结果</h1>
+					<table cellspacing="15px">
+						<tr>
+							<td>每月还款</td>
+							<td><input type="text" value="NAN" readonly="redonly" class="text1" id="monthly">元</td><td></td><td></td>											
+						</tr>
+	<!-- ============================================================================================================= -->
+						<tr>
+							<td>利息总额</td>
+							<td><input type="text" value="NAN" readonly="redonly" class="text1" id="interests">元</td>
+							<td>累计还款总额</td>
+							<td><input type="text" value="NAN" readonly="redonly" class="text1" id="sum">元</td>
+						</tr>
+					</table>
+				</div>
+	<!-- =======================购车税费计算部分======================================================================= -->			
+				<div id="foot2">
+					<div class="img"></div>
+					<h1>计算结果</h1>
+					<table cellspacing="10px">
+						<tr>
+							<td>费用合计</td>
+							<td><input type="text" value="NAN" readonly="redonly" class="text1" id="total">元</td><td></td><td></td>		
+						</tr>
+	<!-- ============================================================================================================= -->
+						<tr>
+							<td>新车购置税</td>
+							<td><input type="text" value="NAN" readonly="redonly" class="text1" id="purchaseTax">元</td>
+							<td>车船使用税</td>
+							<td><input type="text" value="NAN" readonly="redonly" class="text1" id="useTax">元</td>
+						</tr>
+	<!-- ============================================================================================================= -->
+						<tr>
+							<td>上牌费用</td>
+							<td><input type="text" value="NAN" readonly="redonly" class="text1" id="shangPai">元</td>
+							<td>交强险费用</td>
+							<td><input type="text" value="NAN" readonly="redonly" class="text1" id="qianXiang">元</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+	<!-- ============================================================================================================= -->
+			<div class="ban">
+				<a href="" class="A">&copy;版权所有bochy@bochy.com&ordm;</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
